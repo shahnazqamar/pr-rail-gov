@@ -1,3 +1,33 @@
+/* Railway Announcement Styles */
+.railway-announcement {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ffff00ca;
+    color: #000000;
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(255, 255, 0, 0.3);
+    z-index: 1000;
+    max-width: 90%;
+    text-align: center;
+    font-family: "Noto Nastaliq Urdu", serif;
+    font-size: 1.2em;
+    font-weight: bold;
+    border: 3px solid #ffcc00;
+    animation: announcementGlow 2s infinite ease-in-out;
+}
+
+.announcement-content {
+    line-height: 1.8;
+}
+
+@keyframes announcementGlow {
+    0%, 100% { box-shadow: 0 4px 12px rgba(255, 255, 0, 0.3); }
+    50% { box-shadow: 0 6px 20px rgba(255, 255, 0, 0.6); }
+}
+
 html, body {
     height: 100%; /* Ensure body can fill the viewport height */
 }
