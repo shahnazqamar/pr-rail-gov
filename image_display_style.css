@@ -1,5 +1,5 @@
 /* Railway Announcement Styles */
-.railway-announcement {
+/* .railway-announcement {
     position: absolute;
     top: 20px;
     left: 50%;
@@ -26,7 +26,7 @@
 @keyframes announcementGlow {
     0%, 100% { box-shadow: 0 4px 12px rgba(255, 255, 0, 0.3); }
     50% { box-shadow: 0 6px 20px rgba(255, 255, 0, 0.6); }
-}
+} */
 
 body {
     background-color: #003300;
