@@ -26,7 +26,7 @@ const rwpLhrArrivalOptions = [
 const lhrQtaDepartureOptions = [{ trainNo: "40 DN", trainName: "جعفر ایکسپریس", scheduledTime: "16:45" }];
 const qtaLhrArrivalOptions = [{ trainNo: "39 UP", trainName: "جعفر ایکسپریس", scheduledTime: "09:40" }];
 const lhrMianwaliDepartureOptions = [
-    { trainNo: "28 DN", trainName: " شالیمار ایکسپریس", scheduledTime: "07:30" },{ trainNo: "38 DN", trainName: "فرید ایکسپریس", scheduledTime: "06:00" },
+    { trainNo: "28 DN", trainName: " شالیمار ایکسپریس", scheduledTime: "07:10" },{ trainNo: "38 DN", trainName: "فرید ایکسپریس", scheduledTime: "06:00" },
     { trainNo: "02 DN", trainName: " خیبر میل", scheduledTime: "07:55" },{ trainNo: "10_DN", trainName: " علامہ اقبال ایکسپریس", scheduledTime: "12:10" }, 
     { trainNo: "14 DN", trainName: " عوام ایکسپریس", scheduledTime: "18:30" },
  ];
