@@ -4,18 +4,18 @@ import { supabase, getSchedules, addSchedule, updateSchedule, deleteSchedule } f
 // Config flag to determine whether to use Supabase or localStorage
 const USE_SUPABASE = true; // Set to true to use Supabase, false to use localStorage
 const lhrKcDepartureOptions = [
-    { trainNo: "08 DN", trainName: "تیزگام ایکسپریس", scheduledTime: "13:45" }, { trainNo: "42 DN", trainName: " قراقرم ایکسپریس", scheduledTime: "15:00" },
+    { trainNo: "08 DN", trainName: "تیزگام ایکسپریس", scheduledTime: "13:35" }, { trainNo: "42 DN", trainName: " قراقرم ایکسپریس", scheduledTime: "15:00" },
     { trainNo: "34 DN", trainName: "پاک بزنس ایکسپریس", scheduledTime: "16:30" }, { trainNo: "16 DN", trainName: " کراچی ایکسپریس", scheduledTime: "18:00" },
-    { trainNo: "06 DN", trainName: "گرین لائن ایکسپریس", scheduledTime: "20:50" }, { trainNo: "44 DN", trainName: " شاہ حسین ایکسپریس", scheduledTime: "21:00" }
+    { trainNo: "06 DN", trainName: "گرین لائن ایکسپریس", scheduledTime: "20:40" }, { trainNo: "44 DN", trainName: " شاہ حسین ایکسپریس", scheduledTime: "21:00" }
 ];
 const kcLhrArrivalOptions = [
     { trainNo: "41 UP", trainName: "قراقرم ایکسپریس", scheduledTime: "10:20" }, { trainNo: "33 UP", trainName: " پاک بزنس ایکسپریس", scheduledTime: "10:20" },
     { trainNo: "15 UP", trainName: " کراچی ایکسپریس", scheduledTime: "13:00" },  { trainNo: "07 UP", trainName: " تیزگام ایکسپریس", scheduledTime: "14:00" },
-    { trainNo: "05_UP", trainName: "گرین لائن ایکسپریس", scheduledTime: "15:35" }, { trainNo: "43 UP", trainName: " شاہ حسین ایکسپریس", scheduledTime: "15:35" }, 
+    { trainNo: "05_UP", trainName: "گرین لائن ایکسپریس", scheduledTime: "14:35" }, { trainNo: "43 UP", trainName: " شاہ حسین ایکسپریس", scheduledTime: "15:35" }, 
 ];
 const lhrRwpDepartureOptions = [
     { trainNo: "105 UP", trainName: " راول ایکسپریس", scheduledTime: "00:30" }, { trainNo: "101UP", trainName: "سبک رفتار ایکسپریس", scheduledTime: "07:00" },
-    { trainNo: "07 UP", trainName: "تیزگام ایکسپریس", scheduledTime: "14:30" }, { trainNo: "05 UP", trainName: " گرین لائن ایکسپریس", scheduledTime: "16:10" },
+    { trainNo: "07 UP", trainName: "تیزگام ایکسپریس", scheduledTime: "13:35" }, { trainNo: "05 UP", trainName: " گرین لائن ایکسپریس", scheduledTime: "15:10" },
     { trainNo: "103 UP", trainName: "سبک خرام ایکسپریس", scheduledTime: "16:30" }, { trainNo: "107 UP", trainName: "اسلام آباد نان سٹاپ", scheduledTime: "18:00" },
 ];
 const rwpLhrArrivalOptions = [
@@ -24,20 +24,20 @@ const rwpLhrArrivalOptions = [
     { trainNo: "104 DN", trainName: " سبک خرام", scheduledTime: "21:35" },  { trainNo: "108 DN", trainName: " اسلام آباد نان سٹاپ", scheduledTime: "22:30" }
 ];
 const lhrQtaDepartureOptions = [{ trainNo: "40 DN", trainName: "جعفر ایکسپریس", scheduledTime: "16:45" }];
-const qtaLhrArrivalOptions = [{ trainNo: "39 UP", trainName: "جعفر ایکسپریس", scheduledTime: "09:40" }];
+const qtaLhrArrivalOptions = [{ trainNo: "39 UP", trainName: "جعفر ایکسپریس", scheduledTime: "09:10" }];
 const lhrMianwaliDepartureOptions = [
     { trainNo: "28 DN", trainName: " شالیمار ایکسپریس", scheduledTime: "07:10" },{ trainNo: "38 DN", trainName: "فرید ایکسپریس", scheduledTime: "06:00" },
-    { trainNo: "02 DN", trainName: " خیبر میل", scheduledTime: "07:55" },{ trainNo: "10_DN", trainName: " علامہ اقبال ایکسپریس", scheduledTime: "12:10" }, 
-    { trainNo: "14 DN", trainName: " عوام ایکسپریس", scheduledTime: "18:30" },
+    { trainNo: "02 DN", trainName: " خیبر میل", scheduledTime: "07:35" },{ trainNo: "10_DN", trainName: " علامہ اقبال ایکسپریس", scheduledTime: "12:40" }, 
+    { trainNo: "14 DN", trainName: " عوام ایکسپریس", scheduledTime: "18:55" },
  ];
 const mianwaliLhrArrivalOptions = [ 
-    { trainNo: "27 UP", trainName: "شالیمار ایکسپریس", scheduledTime: "02:55" }, { trainNo: "13 UP", trainName: " عوام ایکسپریس", scheduledTime: "07:25" },
+    { trainNo: "27 UP", trainName: "شالیمار ایکسپریس", scheduledTime: "02:55" }, { trainNo: "13 UP", trainName: " عوام ایکسپریس", scheduledTime: "07:00" },
     { trainNo: "09 UP", trainName: "علامہ اقبال ایکسپریس", scheduledTime: "12:30" },{ trainNo: "37 UP", trainName: " فرید ایکسپریس", scheduledTime: "22:00" },
-    { trainNo: "01 UP", trainName: " خیبر میل", scheduledTime: "20:30" }
+    { trainNo: "01 UP", trainName: " خیبر میل", scheduledTime: "19:30" }
 ];
 const lhrNwlDepartureOptions = [
-    { trainNo: "171_UP", trainName: "سیالکوٹ ایکسپریس", scheduledTime: "05:00" }, { trainNo: "211_UP", trainName: "نارووال پسنجر", scheduledTime: "07:15" },
-    { trainNo: "09_UP", trainName: "علامہ اقبال ایکسپریس", scheduledTime: "13:00" }, { trainNo: "125_UP", trainName: "لاثانی ایکسپریس", scheduledTime: "15:45" },
+    { trainNo: "171_UP", trainName: "سیالکوٹ ایکسپریس", scheduledTime: "05:00" }, { trainNo: "211_UP", trainName: "نارووال پسنجر", scheduledTime: "07:25" },
+    { trainNo: "09_UP", trainName: "علامہ اقبال ایکسپریس", scheduledTime: "12:20" }, { trainNo: "125_UP", trainName: "لاثانی ایکسپریس", scheduledTime: "15:45" },
     { trainNo: "209_UP", trainName: "فیض احمد فیض", scheduledTime: "19:30" }
 ];
 const nwlLhrArrivalOptions = [
@@ -51,11 +51,11 @@ const lhrFsldDepartureOptions = [
 ];
 const fsldLhrArrivalOptions = [
     { trainNo: "111_UP", trainName: "بدر ایکسپریس", scheduledTime: "08:35" },{ trainNo: "121 DN", trainName: "راوی ایکسپریس", scheduledTime: "08:55" },
-     { trainNo: "113_UP", trainName: "غوری ایکسپریس", scheduledTime: "18:10" },{ trainNo: "147 UP", trainName: "ماڑی انڈس ایکسپریس", scheduledTime: "05:30" }
+     { trainNo: "113_UP", trainName: "غوری ایکسپریس", scheduledTime: "19:30" },{ trainNo: "147 UP", trainName: "ماڑی انڈس ایکسپریس", scheduledTime: "05:30" }
 ];
 const lhrPshDepartureOptions = [
-    { trainNo: "13 UP", trainName: "عوام ایکسپریس", scheduledTime: "08:00" }, { trainNo: "39 UP", trainName: " جعفر ایکسپریس", scheduledTime: "10:15" },
-    { trainNo: "01 UP", trainName: "خیبر میل", scheduledTime: "21:00" }
+    { trainNo: "13 UP", trainName: "عوام ایکسپریس", scheduledTime: "07:35" }, { trainNo: "39 UP", trainName: " جعفر ایکسپریس", scheduledTime: "09:45" },
+    { trainNo: "01 UP", trainName: "خیبر میل", scheduledTime: "20:00" }
 ];
 const pshLhrArrivalOptions = [
     { trainNo: "02 DN", trainName: "خیبر میل", scheduledTime: "07:15" },{ trainNo: "40 DN", trainName: "جعفر ایکسپریس", scheduledTime: "16:10" }, 
